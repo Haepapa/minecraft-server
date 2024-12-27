@@ -14,5 +14,12 @@ RUN chown -R $(whoami):$(whoami) /minecraft
 
 EXPOSE 19132 19133
 
-# Start the application
+COPY .env /minecraft/.env
+SHELL ["/bin/bash", "-c"] 
+RUN source /minecraft/.env && \
+    echo $ALLOW_LIST > /minecraft/allowlist.json && \
+    echo $SERVER_NAME >> /minecraft/server.properties && \
+    echo $LEVEL_NAME >> /minecraft/server.properties && \
+    echo level-seed=suMpnjaLPn >> /minecraft/server.properties
+
 CMD ["sh", "-c", "LD_LIBRARY_PATH=/minecraft /minecraft/bedrock_server"]
