@@ -39,7 +39,7 @@ jobs:
         run: |
           if [[ "${{ github.ref_name }}" == "dev" ]]; then
             echo 'export ALLOW_LIST=${{ secrets.DEV_ALLOW_LIST }}' | tee -a .env
-            echo 'export SERVER_NAME=${{ secrets.DEV_RSERVER_NAME }}' | tee -a .env
+            echo 'export SERVER_NAME=${{ secrets.DEV_SERVER_NAME }}' | tee -a .env
           elif [[ "${{ github.ref_name }}" == "prod" ]]; then
             echo 'export ALLOW_LIST=${{ secrets.ALLOW_LIST }}' | tee -a .env
             echo 'export SERVER_NAME=${{ secrets.SERVER_NAME }}' | tee -a .env
