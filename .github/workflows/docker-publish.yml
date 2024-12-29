@@ -37,10 +37,10 @@ jobs:
 
       - name: Add .env File
         run: |
-          if [[ "${{ github.ref_name }}" == "dev" ]]; then
+          if [[ "${{ github.ref_name }}" == "dev-bedrock" ]]; then
             echo 'export ALLOW_LIST=${{ secrets.DEV_ALLOW_LIST }}' | tee -a .env
             echo 'export SERVER_NAME=${{ secrets.DEV_SERVER_NAME }}' | tee -a .env
-          elif [[ "${{ github.ref_name }}" == "prod" ]]; then
+          elif [[ "${{ github.ref_name }}" == "prod-bedrock" ]]; then
             echo 'export ALLOW_LIST=${{ secrets.ALLOW_LIST }}' | tee -a .env
             echo 'export SERVER_NAME=${{ secrets.SERVER_NAME }}' | tee -a .env
           else
