@@ -43,6 +43,8 @@ jobs:
           elif [[ "${{ github.ref_name }}" == "prod-bedrock" ]]; then
             echo 'export ALLOW_LIST=${{ secrets.ALLOW_LIST }}' | tee -a .env
             echo 'export SERVER_NAME=${{ secrets.SERVER_NAME }}' | tee -a .env
+          elif [[ "${{ github.ref_name }}" == "dev-java" ]]; then
+            echo 'java run'
           else
             echo "Unknown branch: ${{ github.ref_name }}"
             exit 1
