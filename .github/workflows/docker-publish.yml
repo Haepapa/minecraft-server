@@ -35,12 +35,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "zulu"
-          java-version: "21"
-
       - name: Add .env File
         run: |
           if [[ "${{ github.ref_name }}" == "dev-bedrock" ]]; then
@@ -99,7 +93,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
