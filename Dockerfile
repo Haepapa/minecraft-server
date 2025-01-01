@@ -5,7 +5,8 @@ WORKDIR /minecraft
 RUN mkdir /minecraft/plugins
 RUN chown -R $(whoami):$(whoami) /minecraft
 
-# Copy script
+# Copy script and .env file
+COPY .env /minecraft/.env
 COPY run_server.sh /minecraft/run_server.sh
 RUN chmod +x /minecraft/run_server.sh
 
