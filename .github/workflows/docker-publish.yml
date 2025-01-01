@@ -35,6 +35,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: "21"
+
       - name: Add .env File
         run: |
           if [[ "${{ github.ref_name }}" == "dev-bedrock" ]]; then
