@@ -16,13 +16,13 @@ RUN apt install -y wget default-jre-headless expect net-tools
 
 RUN echo "========================================================================" && \
     echo "OS version:" && \
-    echo lsb_release -a && \
+    lsb_release -a && \
     echo "" && \
     echo "Java version:" && \
     java -version && \
     echo "" && \
     echo "Open Ports:" && \
-    echo netstat -ntlp && \
+    netstat -ntlp && \
     echo "========================================================================"
 
 # Install paper server
