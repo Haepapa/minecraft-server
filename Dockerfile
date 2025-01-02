@@ -12,7 +12,7 @@ RUN chmod +x /minecraft/run_server.sh
 
 # Install dependencies
 RUN apt update -y ; apt upgrade -y ; apt autoremove -y
-RUN apt install -y wget default-jre-headless expect net-tools
+RUN apt install -y wget default-jre-headless expect net-tools lsb-release
 
 RUN echo "========================================================================" && \
     echo "OS version:" && \
