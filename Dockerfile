@@ -14,6 +14,10 @@ RUN chmod +x /minecraft/run_server.sh
 RUN apt update -y ; apt upgrade -y ; apt autoremove -y
 RUN apt install -y wget default-jre-headless expect net-tools
 
+RUN echo "========================================================================" && \
+    java -version && \
+    echo "========================================================================"
+
 # Install paper server
 RUN wget https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/66/downloads/paper-1.21.4-66.jar -O /minecraft/paper.jar
 RUN echo eula=true > /minecraft/eula.txt
