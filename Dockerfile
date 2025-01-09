@@ -29,8 +29,6 @@ RUN echo "======================================================================
 RUN wget https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/66/downloads/paper-1.21.4-66.jar -O /minecraft/paper.jar
 RUN echo eula=true > /minecraft/eula.txt
 
-RUN java -Xms4G -Xmx4G -jar /minecraft/paper.jar --nogui
-
 # Run server for first time
 RUN /minecraft/run_server.sh
 

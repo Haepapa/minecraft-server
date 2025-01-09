@@ -26,8 +26,8 @@ if {[file exists $env_file]} {
     exit 1
 }
 
-# Max attempts
-set max_attempts 21
+# Max attempts (~10mins)
+set max_attempts 131
 set attempt 1
 
 # Start the process (replace with your actual command)
@@ -41,7 +41,7 @@ while {$attempt <= $max_attempts} {
     if {$result eq "running"} {
         # If the service is running, send the command to the process
         puts "Service is running on port 25565. Sleeping..."
-        sleep 30
+        sleep 60
 
         if {$action eq "wl"} {
             # Turn on whitelist and add users
