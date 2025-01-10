@@ -43,6 +43,6 @@ RUN /minecraft/run_server.sh wl
 RUN echo auth-type: floodgate >> plugins/Geyser-Spigot/config.yml
 
 # Expose ports
-EXPOSE 19132/udp 19133/udp 25565/tcp
+EXPOSE 19132/udp 19133/udp 25565/udp
 
 CMD ["sh", "-c", "java -Xms4G -Xmx4G -jar paper.jar --nogui"]
