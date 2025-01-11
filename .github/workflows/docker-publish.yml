@@ -46,6 +46,9 @@ jobs:
           elif [[ "${{ github.ref_name }}" == "dev-java" ]]; then
             echo 'WHITELIST_JAVA=${{ secrets.DEV_WHITELIST_JAVA }}' | tee -a .env
             echo 'WHITELIST_BEDROCK=${{ secrets.DEV_WHITELIST_BEDROCK }}' | tee -a .env
+          elif [[ "${{ github.ref_name }}" == "prod-java" ]]; then
+            echo 'WHITELIST_JAVA=${{ secrets.WHITELIST_JAVA }}' | tee -a .env
+            echo 'WHITELIST_BEDROCK=${{ secrets.WHITELIST_BEDROCK }}' | tee -a .env
           else
             echo "Unknown branch: ${{ github.ref_name }}"
             exit 1
