@@ -5,7 +5,7 @@
 `docker build -t minecraft-server .`<br>
 `docker volume create minecraft_worlds`<br>
 `docker run -d -v minecraft_worlds:/minecraft/worlds --network=host --name minecraft-server minecraft-server`<br>
-`docker logs -f minecraft-server`<br>
+`docker logs -f minecraft-server`<br><br>
 
 ### WSL network setup - PowerShell Admin
 
